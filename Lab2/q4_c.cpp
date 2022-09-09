@@ -1,4 +1,4 @@
-//Command to Compile: g++ q4_c.cpp -o q4_c.exe -lmysql
+//Command to Compile: g++ q3_a.cpp -o q3_a.exe -lmysql
 
 #include <iostream>
 #include <windows.h>
@@ -70,8 +70,8 @@ int main()
         cout<<"Connected Successfully!"<<endl; 
         
         // i
-        writeQuery("SELECT * FROM groceries GROUP BY `item_name`");
-        writeQuery("SELECT * FROM purchase GROUP BY `item_name`");
+        writeQuery("SELECT * FROM groceries WHERE DAY(`date`) = 1");
+        writeQuery("SELECT * FROM purchase WHERE DAY(`date`) = 1");
         // ii
         writeQuery("SELECT * FROM groceries WHERE MONTH(`date`) = 8");
         writeQuery("SELECT * FROM purchase WHERE MONTH(`date`) = 8");
