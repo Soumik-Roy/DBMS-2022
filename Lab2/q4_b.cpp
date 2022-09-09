@@ -1,4 +1,4 @@
-//Command to Compile: g++ q3_b.cpp -o q3_b.exe -lmysql
+//Command to Compile: g++ q4_b.cpp -o q4_b.exe -lmysql
 
 #include <iostream>
 #include <windows.h>

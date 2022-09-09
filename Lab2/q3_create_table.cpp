@@ -2,7 +2,7 @@
 
 /*
 
-Here we connect our MySQL database, named dbms_lab1, with c++, 
+Here we connect our MySQL database, named dbms_lab2_3, with c++, 
 And then we create the required tables in the databse
 
 */
