@@ -118,7 +118,7 @@ int main()
 
     // mysql_real_connect(Connection Instance, Host, Username, Password, Database, Port, Unix Socket, Client Flag)
 
-    if (mysql_real_connect(conn, "localhost", "group50_dbms", "password", "dbms_demo", 3306, NULL, 0)) {
+    if (mysql_real_connect(conn, "localhost", "group50_dbms", "password", "dbms_lab2_3", 3306, NULL, 0)) {
         cout<<"Connected Successfully!"<<endl;
 
         insertValue("t1", {}, {"1", "2", "3"});

@@ -66,23 +66,30 @@ int main()
 
     // mysql_real_connect(Connection Instance, Host, Username, Password, Database, Port, Unix Socket, Client Flag)
 
-    if (mysql_real_connect(conn, "localhost", "group50_dbms", "password", "dbms_demo", 3306, NULL, 0)) {
+    if (mysql_real_connect(conn, "localhost", "group50_dbms", "password", "dbms_lab2_3", 3306, NULL, 0)) {
         cout<<"Connected Successfully!"<<endl; 
         
         // i
+        writeQuery("SELECT * FROM groceries GROUP BY `item_name`");
         writeQuery("SELECT * FROM purchase GROUP BY `item_name`");
         // ii
+        writeQuery("SELECT * FROM groceries WHERE MONTH(`date`) = 8");
         writeQuery("SELECT * FROM purchase WHERE MONTH(`date`) = 8");
         // iii
+        writeQuery("SELECT * FROM groceries INNER JOIN thresholds ON groceries.item_name = thresholds.item_name WHERE groceries.cur_stock <= thresholds.critical_threshold");
         writeQuery("SELECT * FROM stock INNER JOIN thresholds ON stock.item_name = thresholds.item_name WHERE stock.cur_stock <= thresholds.critical_threshold");
         // iv
+        writeQuery("SELECT * FROM groceries INNER JOIN thresholds ON groceries.item_name = thresholds.item_name WHERE groceries.cur_stock <= borderline_threshold AND groceries.cur_stock > thresholds.critical_threshold");
         writeQuery("SELECT * FROM stock INNER JOIN thresholds ON stock.item_name = thresholds.item_name WHERE stock.cur_stock <= thresholds.borderline_threshold AND stock.cur_stock > thresholds.critical_threshold");
         // v
+        writeQuery("SELECT * FROM groceries INNER JOIN thresholds ON groceries.item_name = thresholds.item_name WHERE groceries.cur_stock > thresholds.borderline_threshold");
         writeQuery("SELECT * FROM stock INNER JOIN thresholds ON stock.item_name = thresholds.item_name WHERE stock.cur_stock > thresholds.borderline_threshold");
         // vi
+        writeQuery("SELECT MONTH(`date`) AS `month`, SUM(`price`) AS `total expenditure`, AVG(`price`) AS `avg expenditure` FROM groceries GROUP BY MONTH(`date`) ORDER BY MONTH(`date`) LIMIT 3");
         writeQuery("SELECT MONTH(`date`) AS `month`, SUM(`price`) AS `total expenditure`, AVG(`price`) AS `avg expenditure` FROM purchase GROUP BY MONTH(`date`) ORDER BY MONTH(`date`) LIMIT 3");
         // vii
-        writeQuery("SELECT * FROM purchase GROUP BY `item_name` HAVING COUNT(DISTINCT(MONTH(`date`))) = (SELECT COUNT(DISTINCT(MONTH(`date`))) FROM groceries)");
+        writeQuery("SELECT * FROM groceries GROUP BY `item_name` HAVING COUNT(DISTINCT(MONTH(`date`))) = (SELECT COUNT(DISTINCT(MONTH(`date`))) FROM groceries)");
+        writeQuery("SELECT * FROM purchase GROUP BY `item_name` HAVING COUNT(DISTINCT(MONTH(`date`))) = (SELECT COUNT(DISTINCT(MONTH(`date`))) FROM purchase)");
         
 
     }
