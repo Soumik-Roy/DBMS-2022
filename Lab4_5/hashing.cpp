@@ -237,26 +237,40 @@ vector <vector<int>> dist_hasher(int k,vector <int> nums, int bucket_size){
 int32_t main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    int n;
-    cin>>n;
-    vector <string> book_id;
-    for(int i = 0;i<n;i++){
-        string s;
-        cin>>s;
-        book_id.push_back(s);
+
+    vector <string> book_ids;
+
+    // Taking input from file where book Ids where inserted
+    string bookId;
+    ifstream inputFile("output.txt");
+
+    while (getline (inputFile, bookId)) 
+    {
+        if(bookId.size()>0)
+        {
+            bookId.pop_back();
+            book_ids.push_back(bookId);
+        }
     }
-    vector <int> hashed_book_id;
-    // set <long long> st;
-    for(auto s:book_id){
-        hashed_book_id.push_back(hash_string(s,N));
-        // st.insert(hashed_book_id[hashed_book_id.size()-1]);
-    }
-    // cout<<hashed_book_id.size()<<" "<<st.size()<<"\n";
+
+    int n = book_ids.size();
+    // Close the file
+    inputFile.close();
+
+    // Converting book Ids to integers
+    vector <int> hashed_book_ids;
     
-    printvector(hashed_book_id);
+    // set <long long> st;
+    for(auto s:book_ids){
+        hashed_book_ids.push_back(hash_string(s,N));
+        // st.insert(hashed_book_ids[hashed_book_ids.size()-1]);
+    }
+    // cout<<hashed_book_ids.size()<<" "<<st.size()<<"\n";
+    
+    printvector(hashed_book_ids);
     cout<<"\n";
     cout<<"Extendible Hashing"<<"\n";
-    map <string,vector <int>> ex_hash = ex_hasher(4,hashed_book_id);
+    map <string,vector <int>> ex_hash = ex_hasher(4,hashed_book_ids);
     
     cout<<"\n";
     for(auto p:ex_hash){
@@ -265,14 +279,14 @@ int32_t main(){
         cout<<"\n";
     }
     cout<<"Linear Hashing"<<"\n";
-    vector <vector <int>> lin_hash = lin_hasher(4,16,5,hashed_book_id);
+    vector <vector <int>> lin_hash = lin_hasher(4,16,5,hashed_book_ids);
     for(int i = 0;i<n;i++){
         cout<<i<<" : ";
         printvector(lin_hash[i]);
     }
     cout<<"\n";
     cout<<"Distributed Hashing"<<"\n";
-    vector <vector <int>> dist_hash = dist_hasher(4,hashed_book_id,4);
+    vector <vector <int>> dist_hash = dist_hasher(4,hashed_book_ids,4);
     for(int i = 0;i<dist_hash.size();i++){
         string temp = "";
         for(int k = 0;k<4;k++){
