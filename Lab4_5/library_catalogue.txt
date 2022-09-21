@@ -1,0 +1,15 @@
+An_Ch_0103, Aest_AC_0103, Anjan Chatterjee, The Aesthetic Brain
+An_Da_0104, Self_AD_0104, Antonio Damasio, Self Comes to Mind
+Ca_Sa_0319, Anim_CS_0319, Carl Safina, What Animals Think
+Jo_Ro_1018, Deat_JR_1018, Joanne K. Rowling, Deathly Hallows_Harry Potter
+Jo_Ro_1018, Fant_JR_1018, Joanne K. Rowling, Fantastic Beasts and Where to  Find Them
+Jo_Ro_1018, Gobl_JR_1018, Joanne K. Rowling, Goblet of Fire_Harry Potter
+Jo_Ro_1018, Phil_JR_1018, Joanne K. Rowling, Philosophers Stone_Harry Potter
+Jo_Ro_1018, Pris_JR_1018, Joanne K. Rowling, Prisoner of Azkaban_Harry Potter
+La_Ch_1203, Mind_LC_1203, Lars Chittka, The Mind of a Bee
+Ma_Mi_1313, Emot_MM_1313, Marvin Minsky, Emotion Machine
+Ma_Mi_1313, Soci_MM_1313, Marvin Minsky, Society of Mind
+Pe_Wo_1623, Aunt_PW_1623, Pelham G. Wodehouse, Aunts Arent Gentlemen
+Pe_Wo_1623, Wode_PW_1623, Pelham G. Wodehouse, Wodehouse at the Wicket
+Vi_Ra_2218, Emer_VR_2218, Vilayanur Ramachandran, The Emerging Mind
+Vi_Ra_2218, Phan_VR_2218, Vilayanur Ramachandran, Phantoms in the Brain
