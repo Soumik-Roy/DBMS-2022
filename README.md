@@ -3,7 +3,7 @@
 This repository contains all the Labs and Project related work done by our team during the Database Systems(for CSE) / Data Engineering (for AI) course. 
 We have used mysql databases using C++. 
 
-## Steps to Run code for a Sumbission FOlder
+## Steps to Run code for a Submission Folder
 
 - Checkout the username, password, database name being used in the .cpp MySQL scripts. 
 - Make a user having the same credentials as above, and then a database of the same name as above.
