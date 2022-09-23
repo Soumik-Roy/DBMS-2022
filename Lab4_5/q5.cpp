@@ -335,14 +335,6 @@ void hash_all_values(string input_fname, vector<string> &origVals, vector<int> &
     }
 }
 
-// string get_book_id(string bookName, string authorName)
-// {
-//     string book_id = "";
-//     book_id += bookName.substr(0, 4) + "_";
-
-
-// }
-
 int32_t main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -416,5 +408,6 @@ int32_t main(){
 
     cout<<"Distributed Hashing -> ";
     dist_hash.searchValue(hashed_search_book_id);
+
     return 0;
 }
