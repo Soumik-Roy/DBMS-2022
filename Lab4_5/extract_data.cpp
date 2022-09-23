@@ -11,14 +11,14 @@ using namespace std;
 
 MYSQL *conn;
 
-int display_results(bool exportResults = false)
+int display_results(string exportResults_fname = "")
 {
     MYSQL_RES *results = mysql_store_result(conn);
     MYSQL_ROW record;
     MYSQL_FIELD *fields;
     int num_fields = mysql_num_fields(results);
 
-    ofstream outputFile("output.txt");
+    ofstream outputFile(exportResults_fname);
 
     fields = mysql_fetch_fields(results);
     for(int i = 0; i < num_fields; i++)
@@ -37,11 +37,12 @@ int display_results(bool exportResults = false)
             char *val = record[i];
             cout<<record[i]<<" ";
             
-            if(exportResults)
+            if(exportResults_fname.size()>0)
                 outputFile << record[i] << " ";
         }
         cout<<endl;
-        outputFile<<endl;
+        if(exportResults_fname.size()>0)
+            outputFile<<endl;
     }
 
     outputFile.close();
@@ -51,7 +52,7 @@ int display_results(bool exportResults = false)
 }
 
 
-void writeQuery(string Query, bool printOutput = true, bool exportOutput = false)
+void writeQuery(string Query, bool printOutput = true, string exportOutput_fname = "")
 {
     char query[1000];
     snprintf(query, 1000, Query.c_str());
@@ -59,7 +60,7 @@ void writeQuery(string Query, bool printOutput = true, bool exportOutput = false
 
     if(printOutput)
     {
-        display_results(exportOutput);
+        display_results(exportOutput_fname);
     }
 
     cout<<endl;
@@ -84,7 +85,7 @@ int main()
 
         string tableName = "library_catalogue";
         
-        writeQuery("SELECT book_id FROM library_catalogue", true, true);
+        writeQuery("SELECT book_id FROM library_catalogue", true, "bookIDs.txt");
 
     }
     else {
