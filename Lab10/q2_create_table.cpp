@@ -4,6 +4,8 @@
 #include <vector>
 #include <string>
 
+using namespace std;
+
 MYSQL *conn;
 
 void createTable(string tableName, vector<string> colNames, vector<string> colType, string extras = "") {
@@ -85,13 +87,13 @@ int main() {
         string tableName1 = "APPLICATION";
         createTable(tableName1, Application_Columns, Application_Columns_Type);
 
-        vector<string> table1_fields = {"SID", "Date", "State"};
+        vector<string> table1_fields = {"SID", "Date"};
 
-        insertValue(tableName1, table1_fields, {"1", "12.05.21", NULL});
-        insertValue(tableName1, table1_fields, {"2", "11.05.21", NULL});
-        insertValue(tableName1, table1_fields, {"3", "10.05.21", NULL});
-        insertValue(tableName1, table1_fields, {"4", "10.05.21", NULL});
-        insertValue(tableName1, table1_fields, {"5", "11.05.21", NULL});
+        insertValue(tableName1, table1_fields, {"1", "12.05.21"});
+        insertValue(tableName1, table1_fields, {"2", "11.05.21"});
+        insertValue(tableName1, table1_fields, {"3", "10.05.21"});
+        insertValue(tableName1, table1_fields, {"4", "10.05.21"});
+        insertValue(tableName1, table1_fields, {"5", "11.05.21"});
 
 
         // COURSE Table
@@ -118,13 +120,13 @@ int main() {
         string tableName3 = "RANK";
         createTable(tableName3, Rank_Columns, Rank_Columns_Type);
 
-        vector<string> table3_fields = {"SID", "Avg", "Credits", "Rank"};
+        vector<string> table3_fields = {"SID", "Avg", "Credits"};
 
-        insertValue(tableName3, table3_fields, {"1", "21", "46", NULL});
-        insertValue(tableName3, table3_fields, {"2", "28", "49", NULL});
-        insertValue(tableName3, table3_fields, {"3", "26", "40", NULL});
-        insertValue(tableName3, table3_fields, {"4", "27", "46", NULL});
-        insertValue(tableName3, table3_fields, {"5", "28", "47", NULL});
+        insertValue(tableName3, table3_fields, {"1", "21", "46"});
+        insertValue(tableName3, table3_fields, {"2", "28", "49"});
+        insertValue(tableName3, table3_fields, {"3", "26", "40"});
+        insertValue(tableName3, table3_fields, {"4", "27", "46"});
+        insertValue(tableName3, table3_fields, {"5", "28", "47"});
 
 
         // EXAM Table
