@@ -87,11 +87,12 @@ int main() {
 
         vector<string> table1_fields = {"SID", "Date", "State"};
 
-        insertValue(tableName1, table1_fields, {'1', '12.05.21', NULL});
-        insertValue(tableName1, table1_fields, {'2', '11.05.21', NULL});
-        insertValue(tableName1, table1_fields, {'3', '10.05.21', NULL});
-        insertValue(tableName1, table1_fields, {'4', '10.05.21', NULL});
-        insertValue(tableName1, table1_fields, {'5', '11.05.21', NULL});
+        insertValue(tableName1, table1_fields, {"1", "12.05.21", NULL});
+        insertValue(tableName1, table1_fields, {"2", "11.05.21", NULL});
+        insertValue(tableName1, table1_fields, {"3", "10.05.21", NULL});
+        insertValue(tableName1, table1_fields, {"4", "10.05.21", NULL});
+        insertValue(tableName1, table1_fields, {"5", "11.05.21", NULL});
+
 
         // COURSE Table
         vector<string> Course_Columns = {"CID", "Title", "Credits"};
@@ -102,12 +103,13 @@ int main() {
 
         vector<string> table2_fields = {"CID", "Title", "Credits"};
 
-        insertValue(tableName2, table2_fields, {'2010', 'Networks', '4'});
-        insertValue(tableName2, table2_fields, {'3010', 'Architecture', '5'});
-        insertValue(tableName2, table2_fields, {'4010', 'Systems', '4'});
-        insertValue(tableName2, table2_fields, {'2020', 'Database', '5'});
-        insertValue(tableName2, table2_fields, {'3020', 'Intelligence', '4'});
-        insertValue(tableName2, table2_fields, {'4020', 'Automation', '6'});
+        insertValue(tableName2, table2_fields, {"2010", "Networks", "4"});
+        insertValue(tableName2, table2_fields, {"3010", "Architecture", "5"});
+        insertValue(tableName2, table2_fields, {"4010", "Systems", "4"});
+        insertValue(tableName2, table2_fields, {"2020", "Database", "5"});
+        insertValue(tableName2, table2_fields, {"3020", "Intelligence", "4"});
+        insertValue(tableName2, table2_fields, {"4020", "Automation", "6"});
+
 
         // RANK Table
         vector<string> Rank_Columns = {"SID", "Avg", "Credits", "Rank"};
@@ -118,11 +120,12 @@ int main() {
 
         vector<string> table3_fields = {"SID", "Avg", "Credits", "Rank"};
 
-        insertValue(tableName3, table3_fields, {'1', '21', '46', NULL});
-        insertValue(tableName3, table3_fields, {'2', '28', '49', NULL});
-        insertValue(tableName3, table3_fields, {'3', '26', '40', NULL});
-        insertValue(tableName3, table3_fields, {'4', '27', '46', NULL});
-        insertValue(tableName3, table3_fields, {'5', '28', '47', NULL});
+        insertValue(tableName3, table3_fields, {"1", "21", "46", NULL});
+        insertValue(tableName3, table3_fields, {"2", "28", "49", NULL});
+        insertValue(tableName3, table3_fields, {"3", "26", "40", NULL});
+        insertValue(tableName3, table3_fields, {"4", "27", "46", NULL});
+        insertValue(tableName3, table3_fields, {"5", "28", "47", NULL});
+
 
         // EXAM Table
         vector<string> Exam_Columns = {"CID", "SID", "Date", "Grade"};
@@ -133,13 +136,12 @@ int main() {
 
         vector<string> table4_fields = {"CID", "SID", "Date", "Grade"};
 
-        insertValue(tableName4, table4_fields, {'2010', '1', '24.07.20', 'B'});
-        insertValue(tableName4, table4_fields, {'3010', '2', '26.07.20', 'A'});
-        insertValue(tableName4, table4_fields, {'4010', '3', '30.07.20', 'C'});
-        insertValue(tableName4, table4_fields, {'2020', '4', '20.07.20', 'B'});
-        insertValue(tableName4, table4_fields, {'3020', '5', '22.07.20', 'A'});
-        insertValue(tableName4, table4_fields, {'4020', '3', '25.07.20', 'B'});
-
+        insertValue(tableName4, table4_fields, {"2010", "1", "24.07.20", "B"});
+        insertValue(tableName4, table4_fields, {"3010", "2", "26.07.20", "A"});
+        insertValue(tableName4, table4_fields, {"4010", "3", "30.07.20", "C"});
+        insertValue(tableName4, table4_fields, {"2020", "4", "20.07.20", "B"});
+        insertValue(tableName4, table4_fields, {"3020", "5", "22.07.20", "A"});
+        insertValue(tableName4, table4_fields, {"4020", "3", "25.07.20", "B"});
     }
     else {
         cout << "Error while connecting! : " << mysql_error(conn) << endl;
